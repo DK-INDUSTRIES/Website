@@ -64,6 +64,20 @@
             height: 3px;
             background-color: #1e40af;
         }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -89,13 +103,13 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-black py-4 px-6 absolute w-full left-0 mt-2" id="mobile-menu">
+        <div class="mobile-menu md:hidden bg-black py-4 px-6 absolute w-full left-0 mt-2 border-b border-blue-500" id="mobile-menu">
             <div class="flex flex-col space-y-4">
-                <a href="#home" class="nav-link text-white hover:text-blue-400">Startseite</a>
-                <a href="#about" class="nav-link text-white hover:text-blue-400">Über uns</a>
-                <a href="#products" class="nav-link text-white hover:text-blue-400">Produkte</a>
-                <a href="#services" class="nav-link text-white hover:text-blue-400">Dienstleistungen</a>
-                <a href="#contact" class="nav-link text-white hover:text-blue-400">Kontakt</a>
+                <a href="#home" class="nav-link text-white hover:text-blue-400" onclick="toggleMobileMenu()">Startseite</a>
+                <a href="#about" class="nav-link text-white hover:text-blue-400" onclick="toggleMobileMenu()">Über uns</a>
+                <a href="#products" class="nav-link text-white hover:text-blue-400" onclick="toggleMobileMenu()">Produkte</a>
+                <a href="#services" class="nav-link text-white hover:text-blue-400" onclick="toggleMobileMenu()">Dienstleistungen</a>
+                <a href="#contact" class="nav-link text-white hover:text-blue-400" onclick="toggleMobileMenu()">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -113,8 +127,8 @@
                         <span class="text-blue-400">Innovation</span> trifft<br>industrielle Exzellenz
                     </h1>
                     <p class="text-lg text-gray-300 mb-8">
-                        DK Industries steht für höchste Qualität und innovative Lösungen in der industriellen Fertigung. 
-                        Unsere Produkte definieren die Zukunft der Industrie.
+                        DK Industries steht für höchste Qualität und innovative Lösungen in der industrielle Fertigung. 
+                        Unsere Produkte definieren die Zukunft der Menscheit.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
@@ -216,7 +230,7 @@
                         Exoskelettartiges Armodul mit Recheneinheit, detailliertem Bildschirm und erweiterten Funktionen.
                     </p>
                     <div class="flex justify-between items-center">
-                        <span class="text-blue-400 font-bold">Ab €25.000</span>
+                        <span class="text-blue-400 font-bold">Preis auf Anfrage</span>
                         <button class="text-blue-400 hover:text-blue-300 flex items-center">
                             Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
                         </button>
@@ -245,7 +259,7 @@
                     <div class="bg-gray-800 rounded-lg p-4 mb-4 flex justify-center">
                         <i class="fas fa-robot text-blue-400 text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Jetboots "Hermes"</h3>
+                    <h3 class="text-xl font-bold text-white mb-2">Jetcat "Hermes"</h3>
                     <p class="text-gray-400 mb-4">
                         Exoskelettartige Raketenschuhe mit Schubgenerator für höhere Sprünge und Fallschutz.
                     </p>
@@ -299,7 +313,7 @@
                     <h3 class="text-xl font-bold text-white mb-2">Geheimes Projekt</h3>
                     <p class="text-gray-400 mb-4">
                         Aktuell sind keine weiteren Informationen zu diesem Projekt verfügbar.
-    </p>
+                    </p>
                     <div class="flex justify-between items-center">
                         <span class="text-blue-400 font-bold">Preis auf Anfrage</span>
                         <button class="text-blue-400 hover:text-blue-300 flex items-center">
@@ -307,3 +321,204 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-white inline-block">Dienstleistungen</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Unsere umfassenden Dienstleistungen unterstützen Sie in allen Phasen Ihrer Projekte.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-blue-900 bg-opacity-30 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cog text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Technische Beratung</h3>
+                    <p class="text-gray-400">
+                        Unsere Experten beraten Sie bei der Auswahl und Implementierung der optimalen technischen Lösungen für Ihr Unternehmen.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-blue-900 bg-opacity-30 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Wartung & Service</h3>
+                    <p class="text-gray-400">
+                        Umfassende Wartungs- und Servicepakete für maximale Betriebssicherheit und Langlebigkeit Ihrer Anlagen.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-blue-500 transition duration-300">
+                    <div class="bg-blue-900 bg-opacity-30 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-flask text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Forschung & Entwicklung</h3>
+                    <p class="text-gray-400">
+                        Individuelle Forschungs- und Entwicklungsdienstleistungen für maßgeschneiderte technische Lösungen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-white inline-block">Kontakt</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Nehmen Sie Kontakt mit uns auf - wir freuen uns auf Ihre Anfrage.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-6">Kontaktinformationen</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Adresse</h4>
+                                <p class="text-gray-400">Altonerstraße21</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Telefon</h4>
+                                <p class="text-gray-400">015792391347</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-900 bg-opacity-30 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">E-Mail</h4>
+                                <p class="text-gray-400">info@dk-industries.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold text-white mb-4">Folgen Sie uns</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com" target="_blank" class="bg-blue-900 bg-opacity-30 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-facebook-f text-blue-400"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@DK_DCS" target="_blank" class="bg-blue-900 bg-opacity-30 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-youtube text-blue-400"></i>
+                            </a>
+                            <a href="https://www.linkedin.com" target="_blank" class="bg-blue-900 bg-opacity-30 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-linkedin-in text-blue-400"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="bg-blue-900 bg-opacity-30 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-instagram text-blue-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition duration-300">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">E-Mail</label>
+                                <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition duration-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Betreff</label>
+                            <input type="text" id="subject" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Nachricht</label>
+                            <textarea id="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition duration-300"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 w-full">
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <span class="text-2xl font-bold text-white mr-2">DK</span>
+                    <span class="text-2xl font-bold text-blue-500">Industries</span>
+                </div>
+                
+                <div class="text-gray-400 text-sm">
+                    &copy; 2024 DK Industries. Alle Rechte vorbehalten.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
